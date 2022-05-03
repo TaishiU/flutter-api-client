@@ -17,13 +17,14 @@ class HomeScreen extends HookConsumerWidget {
         title: const Text('Api Client'),
       ),
       body: RefreshIndicator(
-        onRefresh: () => ref.read(homeScreenController.notifier).fetch(),
+        onRefresh: () => ref.read(homeScreenController.notifier).fetchTodo(),
         child: todoList.when(
           error: (error, stackTrace) => _buildError(error: error),
           loading: () => _buildLoading(),
           data: (todoList) => _buildData(todoList: todoList),
         ),
       ),
+      floatingActionButton: _buildFloatingActionButton(ref: ref),
     );
   }
 
@@ -80,6 +81,34 @@ class HomeScreen extends HookConsumerWidget {
           },
         ),
       ),
+    );
+  }
+
+  Widget _buildFloatingActionButton({required WidgetRef ref}) {
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        FloatingActionButton(
+          onPressed: () {
+            ref.read(homeScreenController.notifier).createTodo();
+          },
+          child: const Icon(Icons.add),
+        ),
+        const SizedBox(height: 20),
+        FloatingActionButton(
+          onPressed: () {
+            ref.read(homeScreenController.notifier).updateTodo(id: 1);
+          },
+          child: const Icon(Icons.refresh),
+        ),
+        const SizedBox(height: 20),
+        FloatingActionButton(
+          onPressed: () {
+            ref.read(homeScreenController.notifier).deleteTodo(id: 1);
+          },
+          child: const Icon(Icons.delete),
+        ),
+      ],
     );
   }
 }

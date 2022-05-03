@@ -16,8 +16,7 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$HomeScreenState {
-  bool get isLoading =>
-      throw _privateConstructorUsedError; // @Default(AsyncValue.loading()) AsyncValue<List<CallHistory>> callHistory,
+  bool get isLoading => throw _privateConstructorUsedError;
   AsyncValue<List<Todo>> get todoList => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -108,7 +107,6 @@ class _$_HomeScreenState implements _HomeScreenState {
   @override
   @JsonKey()
   final bool isLoading;
-// @Default(AsyncValue.loading()) AsyncValue<List<CallHistory>> callHistory,
   @override
   @JsonKey()
   final AsyncValue<List<Todo>> todoList;
@@ -146,7 +144,7 @@ abstract class _HomeScreenState implements HomeScreenState {
 
   @override
   bool get isLoading => throw _privateConstructorUsedError;
-  @override // @Default(AsyncValue.loading()) AsyncValue<List<CallHistory>> callHistory,
+  @override
   AsyncValue<List<Todo>> get todoList => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)

@@ -1,16 +1,9 @@
 # api_client
 
-A new Flutter project.
+## 完成イメージ
 
-## Getting Started
+![9b883ba4-8a56-49db-9c43-14daba7d1964](https://user-images.githubusercontent.com/73986840/166406664-eb905656-e87f-44bb-bbf7-e743575b88f4.png)
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## 参考
+Flutter Httpでネットワーク通信部分を実装する<br>
+https://zuma-lab.com/posts/flutter-create-http-api-client

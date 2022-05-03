@@ -17,7 +17,7 @@ abstract class HomeScreenState with _$HomeScreenState {
 
 class HomeScreenController extends StateNotifier<HomeScreenState> {
   HomeScreenController({required this.read}) : super(const HomeScreenState()) {
-    // fetch();
+    fetch();
   }
 
   final Reader read;
@@ -30,15 +30,8 @@ class HomeScreenController extends StateNotifier<HomeScreenState> {
 
       final jsonList = jsonDecode(response.body) as List<dynamic>;
       final todoList = jsonList.map((json) => Todo.fromJson(json)).toList();
-      print('todoList: $todoList');
+      // print('todoList.length: ${todoList.length}');
       state = state.copyWith(todoList: AsyncValue.data(todoList));
-      // print('+++++++++++++');
-      // print('');
-      // print('statusCode: ${response.statusCode}');
-      // print('headers: ${response.headers}');
-      // print('body: ${response.body}');
-      // print('');
-      // print('+++++++++++++');
     } catch (e) {
       print('エラー発生: $e');
       state = state.copyWith(todoList: AsyncValue.error(e));
